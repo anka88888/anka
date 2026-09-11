@@ -30,7 +30,7 @@ AIGC:
 
 ## 可视化
 
-<iframe src="/assets/charts/supply.html" width="100%" height="520" frameborder="0"></iframe>
+<iframe src="../../assets/charts/supply.html" width="100%" height="520" frameborder="0"></iframe>
 
 ## 结论与业务影响
 
