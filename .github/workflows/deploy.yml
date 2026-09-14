@@ -1,0 +1,31 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install MkDocs
+        run: pip install mkdocs==1.6.1 mkdocs-material==9.7.7
+
+      - name: Build site
+        run: mkdocs build
+
+      - name: Deploy to gh-pages
+        run: |
+          git config user.name "anka88888"
+          git config user.email "nitroaa138@outlook.com"
+          mkdocs gh-deploy --force
